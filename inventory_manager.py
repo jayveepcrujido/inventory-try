@@ -1,7 +1,7 @@
 import data
 
 
-class FruitInventoryManager:  
+class FruitInventoryManager:
     def add_item(self, item, quantity):
         if item in data.inventory:
             data.inventory[item] += quantity

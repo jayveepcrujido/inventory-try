@@ -2,6 +2,7 @@ import unittest
 import data
 from inventory_manager import FruitInventoryManager
 
+
 class TestInventoryManager(unittest.TestCase):
     
     def setUp(self):
@@ -10,7 +11,7 @@ class TestInventoryManager(unittest.TestCase):
 
     def test_add_item(self):
         self.manager.add_item("apples", 10)  # Add apples with quantity 10
-        self.assertEqual(self.manager.get_stock("apples"), 10)  # Assert that apples have stock of 10
+        self.assertEqual(self.manager.get_stock("apples"), 10)  # Assert apples have stock of 10
 
     def test_remove_item(self):
         self.manager.add_item("bananas", 5)  # Add bananas with quantity 5
@@ -23,6 +24,7 @@ class TestInventoryManager(unittest.TestCase):
         inventory = self.manager.view_inventory()  # View the current inventory
         self.assertIn("oranges", inventory)  # Check that oranges are in the inventory
         self.assertEqual(inventory["oranges"], 7)  # Assert oranges quantity is 7
+
 
 if __name__ == "__main__":
     unittest.main()
