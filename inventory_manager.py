@@ -1,6 +1,5 @@
-# inventory_manager.py
-
 import data
+
 
 class InventoryManager:
     def add_item(self, item, quantity):
@@ -13,12 +12,20 @@ class InventoryManager:
         if item in data.inventory:
             if data.inventory[item] > quantity:
                 data.inventory[item] -= quantity
-                return f"Removed {quantity} of {item}. Remaining: {data.inventory[item]}"
+                remaining = data.inventory[item]
+                return (
+                    f"Removed {quantity} of {item}. "
+                    f"Remaining: {remaining}"
+                )
             elif data.inventory[item] == quantity:
                 del data.inventory[item]
                 return f"Removed all {quantity} of {item}. Item deleted."
             else:
-                return f"Cannot remove {quantity}. Only {data.inventory[item]} in stock."
+                available = data.inventory[item]
+                return (
+                    f"Cannot remove {quantity}. "
+                    f"Only {available} in stock."
+                )
         return f"{item} not found."
 
     def view_inventory(self):
@@ -26,6 +33,7 @@ class InventoryManager:
 
     def get_stock(self, item):
         return data.inventory.get(item, 0)
+
 
 # CLI
 def main():
@@ -58,8 +66,7 @@ def main():
         elif choice == "3":
             inventory = manager.view_inventory()
             if not inventory:
-                print()
-                print("No item found.")
+                print("\nNo item found.")
             else:
                 for item, qty in inventory.items():
                     print(f"{item}: {qty}")
@@ -70,11 +77,11 @@ def main():
                 print(f"{item} not found")
             else:
                 print(f"Stock of {item}: {stock}")
-
         elif choice == "5":
             break
         else:
             print("Invalid choice.")
+
 
 if __name__ == "__main__":
     main()
