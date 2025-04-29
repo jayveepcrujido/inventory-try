@@ -63,7 +63,7 @@ def main():
                     raise ValueError("\nInvalid quantity. Must be a number.")
                 quantity = int(quantity_str)
                 result = manager.remove_item(item, quantity)
-                print("\n",result)
+                print("\n", result)
 
             elif choice == "3":
                 inventory = manager.view_inventory()
@@ -92,8 +92,6 @@ def main():
             print(f"\nInput error: {ve}")
         except Exception as e:
             print(f"\nAn unexpected error occurred: {e}")
-
-
 
 if __name__ == "__main__":
     main()
