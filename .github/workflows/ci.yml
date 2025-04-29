@@ -29,7 +29,7 @@ jobs:
           python -m unittest discover > result.log; tail -n 10 result.log  # Save the test results to result.log
 
       - name: Upload test results as an artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: test-results
           path: result.log  # Path to the file you want to upload as an artifact
