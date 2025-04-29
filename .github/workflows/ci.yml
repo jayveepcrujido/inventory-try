@@ -1,4 +1,4 @@
-name: Simple Inventory Management  # Optional workflow name
+name: Simple Fruit Inventory Management  # Optional workflow name
 
 on: [push, pull_request]
 

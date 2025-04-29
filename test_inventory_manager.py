@@ -1,12 +1,12 @@
 import unittest
 import data
-from inventory_manager import InventoryManager
+from inventory_manager import FruitInventoryManager
 
 
 class TestInventoryManager(unittest.TestCase):
     def setUp(self):
         data.inventory.clear()
-        self.manager = InventoryManager()
+        self.manager = FruitInventoryManager()
 
     def test_add_item(self):
         self.manager.add_item("apples", 10)
